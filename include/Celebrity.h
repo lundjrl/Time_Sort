@@ -23,11 +23,12 @@ class Celebrity{
 		void setMet(bool met);
 
 		//Getter methods for all instance variables
-		std::string getName(); const;
+		std::string getName();
 		int getBad();
 		std::string getField();
 		bool getMet();
-
+		
+		bool operator<(const Celebrity c);
 };
 
 #endif

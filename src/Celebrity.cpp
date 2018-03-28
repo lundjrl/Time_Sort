@@ -37,3 +37,25 @@ std::string Celebrity::getField(){
 bool Celebrity::getMet(){
 	return met;
 }
+
+bool Celebrity::operator<(Celebrity c){
+	if(this->getBad() != c.getBad()){
+		if(this->getBad() < c.getBad())
+			return true;
+		else
+			return false;
+	}
+	
+	if(this->getMet() && !c.getMet())
+		return false;
+	if(!this->getMet() && c.getMet())
+		return true;
+	
+	if(this->getName().compare(c.getName()) > 0)
+		return true;
+	else
+		return false;
+}
+
+
+
