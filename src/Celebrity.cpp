@@ -1,32 +1,39 @@
 #include <string>
+#include <iostream>
 #include "Celebrity.h"
 
+//Constructor for a Celebrity
+Celebrity::Celebrity(){
+}
 
+//Destructor 
+Celebrity::~Celebrity(){
+}
 
 //Mutator methods for Celebrity variables
-void setName(std::string n){
+void Celebrity::setName(std::string n){
 	name = n;
 }
-void setBad(int b){
+void Celebrity::setBad(int b){
 	bad = b;
 }
-void setField(std::string f){
+void Celebrity::setField(std::string f){
 	field = f;
 }
-void setMet(bool m){
+void Celebrity::setMet(bool m){
 	met = m;
 }
 
 //Accessor methods for Celebrity variables
-std::string getName(){
+std::string Celebrity::getName(){
 	return name;
 }
-int getBad(){
+int Celebrity::getBad(){
 	return bad;
 }
-std::string getField(){
+std::string Celebrity::getField(){
 	return field;
 }
-bool getMet(){
+bool Celebrity::getMet(){
 	return met;
 }

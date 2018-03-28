@@ -2,9 +2,14 @@
 #include <vector>
 #include <iostream>
 #include "Celebrity.h"
+#include "sorts.h"
 
 
 int main(int argc, char** argv){
+	
+	//Ignoring warning messages for main parameters
+	std::ignore = argc;
+	std::ignore = argv;
 
 	std::vector<Celebrity> celeb{
 		Celebrity::Celebrity("Brendon Urie", 10, "music", true),
