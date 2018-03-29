@@ -10,6 +10,13 @@ Celebrity::Celebrity(){
 Celebrity::~Celebrity(){
 }
 
+Celebrity::Celebrity(std::string n, int b, std::string f, bool m){
+	name = n;
+	bad = b;
+	field = f;
+	met = m;
+}
+
 //Mutator methods for Celebrity variables
 void Celebrity::setName(std::string n){
 	name = n;

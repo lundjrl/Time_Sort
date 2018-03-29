@@ -14,6 +14,7 @@ class Celebrity{
 
 	public:
 		Celebrity();
+		Celebrity(std::string n, int b, std::string f, bool m);
 		~Celebrity();
 	
 		//Setter methods for all instance variables
