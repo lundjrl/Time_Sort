@@ -4,6 +4,10 @@
 
 //Constructor for a Celebrity
 Celebrity::Celebrity(){
+	name = "blank";
+	bad = 1;
+	field = "etc";
+	met = false;
 }
 
 //Destructor 
@@ -45,24 +49,58 @@ bool Celebrity::getMet(){
 	return met;
 }
 
-bool Celebrity::operator<(Celebrity c){
-	if(this->getBad() != c.getBad()){
-		if(this->getBad() < c.getBad())
+bool Celebrity::operator<(Celebrity c)const{
+	/*if(bad != c.getBad()){
+		if(bad < c.getBad())
+			return true;
+		else
+			return false;
+	}
+	//std::cout << "Bad" << std::endl;	
+	if(met && !c.getMet())
+		return false;
+	if(!met && c.getMet())
+		return true;
+	//std::cout << "Met" << std::endl;
+	if(name.compare(c.getName()) > 0)
+		return true;
+	else
+		return false;*/
+	//std::cout << "Name" << std::endl;
+	//return true;
+	if((rand() % 2)==1)
+		return true;
+	else
+		return false;
+}
+
+bool Celebrity::operator<=(Celebrity c) const {
+	
+	/*if(bad != c.getBad()){
+		if(bad < c.getBad())
 			return true;
 		else
 			return false;
 	}
 	
-	if(this->getMet() && !c.getMet())
+	if(met && !c.getMet())
 		return false;
-	if(!this->getMet() && c.getMet())
+	if(met && c.getMet())
 		return true;
 	
-	if(this->getName().compare(c.getName()) > 0)
+	if(name.compare(c.getName()) >= 0)
+		return true;
+	else
+	
+		return false;	
+	*/
+	if((rand() % 2) == 1)
 		return true;
 	else
 		return false;
 }
+
+
 
 
 

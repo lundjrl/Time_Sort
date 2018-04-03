@@ -29,7 +29,8 @@ class Celebrity{
 		std::string getField();
 		bool getMet();
 		
-		bool operator<(const Celebrity c);
+		bool operator<(const Celebrity c) const;
+		bool operator<=(const Celebrity c) const;
 };
 
 #endif

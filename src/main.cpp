@@ -1,18 +1,21 @@
 #include <string>
 #include <vector>
 #include <iostream>
-#include "Celebrity.h"
-#include "sorts.h"
-
+#include "../include/Celebrity.h"
+#include "../include/sorts.h"
+#include <cstdlib>
+#include <algorithm>
 
 int main(int argc, char** argv){
 	
 	//Ignoring warning messages for main parameters
-	//std::ignore = argc;
-	//std::ignore = argv;
-
-//	std::vector<Celebrity> celeb{
-	/*	Celebrity("Brendon Urie", 10, "music", true),
+	if(argc != 2){
+		std::cout << "ERROR: Enter correct number of parameters" << std::endl;
+	}
+	int size = atoi(argv[1]);
+	std::vector<Celebrity> celeb(size); 
+	/*{
+		Celebrity("Brendon Urie", 10, "music", true),
 		Celebrity("Lorde",10 , "music", false),
 		Celebrity("Donald Trump", 0, "politics", false),	
 		Celebrity("Ira Woodring", 9, "teaching", true),
@@ -21,8 +24,28 @@ int main(int argc, char** argv){
 		Celebrity("Kanye West", 5, "music", false),
 		Celebrity("Kwame Kilpatrick", 1, "politics", false),
 		Celebrity("Flavor Flav", 2, "movies", false),
-	*/Celebrity c = Celebrity("Geling Shang", 6, "teaching", true);
-//	}
+		Celebrity("Geling Shang", 6, "teaching", true)
+	};*/
 
-	return 0;
+	std::string name = "";
+	int rating = 1;
+	bool haveMet = false;;
+	for(int i = 0; i <= size; i++){
+		name = "";
+		for(int j = 0; j < 8; j++){
+			name += std::to_string((std::rand() % 26) + 97);
+		}
+		rating = (std::rand() % 10 + 1);
+
+		if(std::rand() % 2 == 0)
+			haveMet = false;
+		else
+			haveMet = true;
+		celeb.push_back(Celebrity(name, rating, "Etc", haveMet));	
+	}
+	
+	std::cout << "Done adding" << std::endl;
+	
+	mergeSort(celeb);
+	
 }
